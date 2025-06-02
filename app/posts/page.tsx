@@ -9,7 +9,7 @@ export default function PostListPage() {
   const [isOnScrollMode, setIsOnScrollMode] = useState(false);
 
   return (
-    <div className="p-4">
+    <div className="p-6">
       <div className="flex justify-between">
         <h2 className="text-2xl font-bold my-4">Posts List</h2>
         <div className="flex justify-center items-center">

@@ -19,13 +19,15 @@ const PhotoPage = async ({ params }: PhotoPageProps) => {
   const photo = (await response.json()) as Photo;
 
   return (
-    <PhotoDetails
-      src={photo.download_url}
-      alt={photo.author}
-      photographer={{
-        name: photo.author,
-      }}
-    />
+    <div className="p-6">
+      <PhotoDetails
+        src={photo.download_url}
+        alt={photo.author}
+        photographer={{
+          name: photo.author,
+        }}
+      />
+    </div>
   );
 };
 
