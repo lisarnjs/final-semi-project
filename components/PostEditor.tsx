@@ -23,7 +23,7 @@ export default function PostEditor({ initialPost }: PostEditorProps) {
     onSuccess: () => {
       alert(isEdit ? "수정 성공!" : "작성 성공!");
       queryClient.invalidateQueries({ queryKey: ["posts"] }); // 목록 갱신
-      router.push("/");
+      router.push("/posts");
     },
   });
 

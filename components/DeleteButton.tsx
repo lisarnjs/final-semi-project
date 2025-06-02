@@ -16,7 +16,7 @@ export default function DeleteButton({ postId }: Props) {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["posts"] });
       alert("삭제되었습니다.");
-      router.push("/");
+      router.push("/posts");
     },
   });
 

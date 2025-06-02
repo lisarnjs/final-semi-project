@@ -3,14 +3,11 @@ import { getPhoto } from "@/lib/fakeImageApi";
 import { Photo } from "@/types/photo";
 import { notFound, useParams } from "next/navigation";
 
-interface PhotoPageProps {
-  params: {
-    id: string;
-  };
-}
+type PageParams = Promise<{ id: string }>;
 
-const PhotoPage = async ({ params }: PhotoPageProps) => {
-  const response = await getPhoto(params.id);
+const PhotoPage = async ({ params }: { params: PageParams }) => {
+  const { id } = await params;
+  const response = await getPhoto(id);
 
   if (response.status === 404) {
     notFound();
